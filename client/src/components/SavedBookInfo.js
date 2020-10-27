@@ -4,7 +4,7 @@ import API from "../utils/API";
 const BookInfo = ({bookData, setSavedBooks}) => {
  
   const removeFromSaved = () => {
-    API.deleteBook(bookData.id)
+    API.deleteBook(bookData._id)
       .then((res) => setSavedBooks(res));
   }
   return (
