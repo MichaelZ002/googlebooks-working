@@ -3,7 +3,8 @@ import API from "../utils/API";
 
 const BookInfo = ({bookData, setSavedBooks}) => {
  
-  const removeFromSaved = () => {
+  const removeFromSaved = (e) => {
+    e.preventDefault
     API.deleteBook(bookData._id)
       .then((res) => setSavedBooks(res));
   }
@@ -21,7 +22,7 @@ const BookInfo = ({bookData, setSavedBooks}) => {
         {bookData.description}
       </div>
       
-        <button onClick={() => removeFromSaved()}>
+        <button onClick={(e) => removeFromSaved(e)}>
           Delete
         </button>
        
