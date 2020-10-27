@@ -4,7 +4,7 @@ import API from "../utils/API";
 const BookInfo = ({bookData, setSavedBooks}) => {
   const saveBookInfo = () => {
     API.saveBook(bookData)
-      .then(res => setSavedBooks(res));
+      .then(res => setSavedBooks(res.data));
   }
  
   return (
