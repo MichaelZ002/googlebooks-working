@@ -6,7 +6,7 @@ const BookInfo = ({bookData, setSavedBooks}) => {
   const removeFromSaved = (e) => {
     e.preventDefault()
     API.deleteBook(bookData._id)
-      .then((res) => setSavedBooks(res));
+    .then((res) => setSavedBooks(prev => prev.filter(value => value._id !== res.data._id)));
   }
   return (
     <div key={bookData.id}>
