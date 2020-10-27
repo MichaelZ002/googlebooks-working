@@ -7,8 +7,8 @@ class BookController {
     .catch(err => res.status(422).json(err));
   }
   create(req, res) {
-    console.log('ahhhh')
-    db.Book.create(req.body)
+    console.log('req.body.volumeInfo')
+    db.Book.create(req.body.volumeInfo)
       .then(dbBook => res.json(dbBook))
       .catch(err => res.status(422).json(err));
   };
