@@ -14,8 +14,7 @@ class BookController {
   };
   remove(req, res) {
     console.log('remove');
-    db.Book.findById(req.params.id)
-      .then(dbBook => dbBook.remove())
+    db.Book.remove({_id: req.params.id})
       .then(dbBook => res.json(dbBook))
       .catch(err => res.status(422).json(err));
   };
