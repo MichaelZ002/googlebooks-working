@@ -9,7 +9,7 @@ const Saved = ({savedBooks, setSavedBooks}) => {
     API.getSavedBooks()
       .then(res => {
         console.log({res})
-        if (res.isArray()) {
+        if (res.data) {
           setSavedBooks(res.data);
 
         }
