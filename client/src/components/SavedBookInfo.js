@@ -1,11 +1,8 @@
 import React from 'react';
 import API from "../utils/API";
 
-const BookInfo = ({bookData, setSavedBooks, isSaved}) => {
-  const saveBookInfo = () => {
-    API.saveBook(bookData)
-      .then(res => setSavedBooks(res));
-  }
+const BookInfo = ({bookData, setSavedBooks}) => {
+ 
   const removeFromSaved = () => {
     API.deleteBook(bookData.id)
       .then((res) => setSavedBooks(res));
@@ -23,15 +20,11 @@ const BookInfo = ({bookData, setSavedBooks, isSaved}) => {
       <div>
         {bookData.description}
       </div>
-      {isSaved ?
+      
         <button onClick={() => removeFromSaved()}>
-          Save
+          Delete
         </button>
-        :
-        <button onClick={() => saveBookInfo()}>
-          Save
-        </button>
-      }
+       
     </div>
   )
 }

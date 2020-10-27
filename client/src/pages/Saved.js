@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Jumbotron from "../components/Jumbotron";
 import API from "../utils/API";
-import BookInfo from '../components/BookInfo';
+import BookInfo from '../components/SavedBookInfo';
 
 const Saved = ({savedBooks, setSavedBooks}) => {
   useEffect(() => {
@@ -25,7 +25,7 @@ const Saved = ({savedBooks, setSavedBooks}) => {
         return (
           <BookInfo
             bookData={value}
-            isSaved={true}
+            
             key={value.id}
             setSavedBooks={setSavedBooks}
           />
