@@ -10,7 +10,7 @@ const Saved = ({savedBooks, setSavedBooks}) => {
       .then(res => {
         console.log({res})
         if (res.isArray()) {
-          setSavedBooks(res);
+          setSavedBooks(res.data);
 
         }
       })
